@@ -42,6 +42,7 @@
       (when color
         (.setColor ^Batch batch Color/WHITE)))))
 
+
 (defrecord SpriteEntity [object] Entity
   (draw! [{:keys [^Sprite object
                           alpha
@@ -78,6 +79,7 @@
     (if alpha
       (.draw object ^Batch batch alpha)
       (.draw object ^Batch batch))))
+
 
 (defrecord NinePatchEntity [object] Entity
   (draw! [{:keys [^NinePatch object x y width height]} _ batch]
