@@ -36,8 +36,8 @@
         (let [scale-x (float (or scale-x 1))
               scale-y (float (or scale-y 1))
               angle (float (or angle 0))]
-          (.draw ^Batch batch object (+ x translate-x) (+ y translate-y) 0 0 width height
-            scale-x scale-y angle))
+          (.draw ^Batch batch object (+ x translate-x) (+ y translate-y) (- translate-x) (- translate-y) width height
+                 scale-x scale-y angle))
         (.draw ^Batch batch object (+ x translate-x) (+ y translate-y) width height))
       (when color
         (.setColor ^Batch batch Color/WHITE)))))
